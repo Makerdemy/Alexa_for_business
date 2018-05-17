@@ -1,0 +1,56 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "greeter skill",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "NameIntent",
+                    "slots": [
+                        {
+                            "name": "Name",
+                            "type": "AMAZON.US_FIRST_NAME"
+                        }
+                    ],
+                    "samples": [
+                        "{Name}",
+                        "I am {Name}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "AMAZON.US_FIRST_NAME",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Vignesh"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Kevin"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Haresh"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

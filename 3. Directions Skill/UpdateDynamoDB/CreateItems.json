@@ -1,0 +1,17 @@
+{
+  "create":[{
+      "room" : "room 2",
+      "destination": "room 1",
+      "direction": "Open the door and turn to your right, get down using the stairs and make a U turn and move forward untill you see the room on the left."
+    },
+    {
+    "room": "room 3",
+    "destination": "room 1",
+    "direction": "Turn to your right, move forward for 50 metres, now you should see the room on the right"
+    },
+    {
+    "room": "room 4",
+    "destination": "room 1",
+    "direction": "Turn to your left, climb up the stairs, move forward untill you see the room to your left"
+    }]
+}

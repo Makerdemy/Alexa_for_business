@@ -1,0 +1,233 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "maintenance skill",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "IssueIntent",
+                    "slots": [
+                        {
+                            "name": "issue",
+                            "type": "List_issues",
+                            "samples": [
+                                "{issue} issues",
+                                "{issue} issue"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{issue} issues",
+                        "{issue} issue",
+                        "I have {issue} issues",
+                        "I have {issue} issue"
+                    ]
+                },
+                {
+                    "name": "DetailsIntent",
+                    "slots": [
+                        {
+                            "name": "name",
+                            "type": "AMAZON.US_FIRST_NAME",
+                            "samples": [
+                                "{name}",
+                                "I am {name}"
+                            ]
+                        },
+                        {
+                            "name": "place",
+                            "type": "List_places",
+                            "samples": [
+                                "{place}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{name}",
+                        "I am {name}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "List_issues",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "other"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "air conditioner"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "furniture"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "laptop"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AMAZON.US_FIRST_NAME",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "vignesh"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "haresh"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "List_places",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "room two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "room one"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "DetailsIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "name",
+                            "type": "AMAZON.US_FIRST_NAME",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.872113538374.949225133816",
+                                "elicitation": "Elicit.Slot.872113538374.949225133816"
+                            }
+                        },
+                        {
+                            "name": "place",
+                            "type": "List_places",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.872113538374.335302591482",
+                                "elicitation": "Elicit.Slot.872113538374.335302591482"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "IssueIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "issue",
+                            "type": "List_issues",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1067225218153.450027884483",
+                                "elicitation": "Elicit.Slot.1067225218153.450027884483"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.872113538374.949225133816",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Can you please repeat your name"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.872113538374.949225133816",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "A  maintenance report will be send in the name {name} , is that ok?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.872113538374.335302591482",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell the place where the maintenance team should address this issue"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.872113538374.335302591482",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "The maintenance team will address the issue at {place} , is that ok?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1067225218153.450027884483",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Can you please repeat the issue that you are facing?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1067225218153.450027884483",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "The maintenance report is for {issue} issue, am I correct?"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "createDescription":[{
+      "room" : "room 1",
+      "description": "The place where meetings are held"
+    },
+    {
+    "room": "room 2",
+    "description": "The place where engineers work with machinery"
+    }]
+}

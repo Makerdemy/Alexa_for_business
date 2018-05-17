@@ -1,0 +1,325 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "mail skill",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "PrimaryDetailsIntent",
+                    "slots": [
+                        {
+                            "name": "Name",
+                            "type": "AMAZON.US_FIRST_NAME",
+                            "samples": [
+                                "I am {Name}",
+                                "{Name}"
+                            ]
+                        },
+                        {
+                            "name": "Recipient",
+                            "type": "AMAZON.US_FIRST_NAME",
+                            "samples": [
+                                "{Recipient} will recieve the mail",
+                                "Send the mail to {Recipient}",
+                                "{Recipient}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{Name}",
+                        "I am {Name}"
+                    ]
+                },
+                {
+                    "name": "LeaveIntent",
+                    "slots": [
+                        {
+                            "name": "days",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "I want to take leave for {days} days",
+                                "{days}"
+                            ]
+                        },
+                        {
+                            "name": "fromdate",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "The leave will start from {fromdate}",
+                                "{fromdate}"
+                            ]
+                        },
+                        {
+                            "name": "todate",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "The leave will end on {todate}",
+                                "{todate}"
+                            ]
+                        },
+                        {
+                            "name": "reason",
+                            "type": "Reasons",
+                            "samples": [
+                                "{reason}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "I am taking leave",
+                        "Leave",
+                        "The purpose of the mail is Leave"
+                    ]
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "AMAZON.US_FIRST_NAME",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Vignesh"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Haresh"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Reasons",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Personal"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Vacation"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Medical"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "PrimaryDetailsIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "Name",
+                            "type": "AMAZON.US_FIRST_NAME",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.680351159889.209787430544",
+                                "elicitation": "Elicit.Slot.680351159889.209787430544"
+                            }
+                        },
+                        {
+                            "name": "Recipient",
+                            "type": "AMAZON.US_FIRST_NAME",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.680351159889.402963714819",
+                                "elicitation": "Elicit.Slot.680351159889.402963714819"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "LeaveIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "days",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.884727730577.76464442857",
+                                "elicitation": "Elicit.Slot.884727730577.76464442857"
+                            }
+                        },
+                        {
+                            "name": "fromdate",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.884727730577.1472147410368",
+                                "elicitation": "Elicit.Slot.884727730577.1472147410368"
+                            }
+                        },
+                        {
+                            "name": "todate",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.884727730577.281147323879",
+                                "elicitation": "Elicit.Slot.884727730577.281147323879"
+                            }
+                        },
+                        {
+                            "name": "reason",
+                            "type": "Reasons",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.884727730577.344642584023",
+                                "elicitation": "Elicit.Slot.884727730577.344642584023"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.680351159889.209787430544",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Can you please repeat your name?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.680351159889.209787430544",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "The mail ID set for {Name} , will be the from address, am I correct?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.680351159889.402963714819",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Who will recieve this mail?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "To whom do you want to send the mail?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.680351159889.402963714819",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Are you sure that you want to send the mail to {Recipient} ?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.884727730577.344642584023",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Medical, vacation or Personal, which will be the appropriate reason for your leave"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.884727730577.344642584023",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Your leave is for {reason} reasons, am I correct?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.884727730577.76464442857",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell for how many days you will be taking leave"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.884727730577.76464442857",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Your leave is for {days} days, is that right?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.884727730577.1472147410368",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell the date from when your leave will start"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.884727730577.1472147410368",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Your leave begins on {fromdate} , am I correct?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.884727730577.281147323879",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell the date on which your leave will end"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.884727730577.281147323879",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Your leave is for {days} days, from {fromdate} to {todate} , is that right?"
+                    }
+                ]
+            }
+        ]
+    }
+}

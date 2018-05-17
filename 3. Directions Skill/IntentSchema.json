@@ -1,0 +1,118 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "direction skill",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "DirectionIntent",
+                    "slots": [
+                        {
+                            "name": "room",
+                            "type": "room_names",
+                            "samples": [
+                                "{room}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Guide me to {room}",
+                        "How should I go to {room}",
+                        "I want to go to {room}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "room_names",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "room 3",
+                                "synonyms": [
+                                    "room three"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "room 2",
+                                "synonyms": [
+                                    "room two"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "room 1",
+                                "synonyms": [
+                                    "room one"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "DirectionIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "room",
+                            "type": "room_names",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1365441327027.720259449953",
+                                "elicitation": "Elicit.Slot.1365441327027.720259449953"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1365441327027.720259449953",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Can you please repeat where you wanted to go"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1365441327027.720259449953",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "You wanted to know where {room} is, am i correct?"
+                    }
+                ]
+            }
+        ]
+    }
+}
